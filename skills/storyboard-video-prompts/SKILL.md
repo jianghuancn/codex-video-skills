@@ -1,6 +1,6 @@
 ---
 name: storyboard-video-prompts
-description: Create detailed Seedance2-ready production storyboard prompts for ChatGPT/GPT Image 2/OpenAI image2. Use when Codex needs to turn an idea, script, product ad, music video, short drama, shot list, or visual concept into a multi-panel storyboard reference image that includes shot order, shot size, camera movement, character action, blocking/path, depth of field/lens, environment, lighting, transition, continuity anchors, and paired Seedance2 video-generation prompts.
+description: Create detailed Seedance2-ready production storyboard prompts for ChatGPT/GPT Image 2/OpenAI image2. Use when Codex needs to turn an idea, script, product ad, music video, short drama, shot list, visual concept, action choreography, product demo, identity-board workflow, rough previs, animatic, Aimikoda-style storyboard grid, or storyboard-to-video reference into a multi-panel storyboard image that includes shot order, shot size, camera movement, character action, blocking/path, depth of field/lens, environment, lighting, transition, continuity anchors, rhythm/action/state tracking, and paired Seedance2 video-generation prompts.
 ---
 
 # Storyboard Video Prompts
@@ -13,7 +13,14 @@ Default to Chinese unless the user asks for another language. Return usable prom
 
 ## Default Output
 
-Default to a **detailed Seedance2-ready storyboard**, not a clean unlabeled board.
+Default to a **Seedance2-ready storyboard workflow**, not a generic pretty storyboard. Choose the board style that best fits the request:
+
+- **Rough previs board** for action, choreography, timing, camera planning, and model-readable motion.
+- **Detailed production board** for ads, products, short drama, cinematic continuity, or shots needing text guidance.
+- **Identity/performance board** when character consistency, FACS expressions, valence-arousal, costume, prop, or emotional range is the main problem.
+- **Animatic track board** when the video needs many fast cuts, beat-synced rhythm, product assembly, UI motion, sabotage, or exact prop state changes.
+
+Read `references/aimikoda-methods.md` before complex action, choreography, rough sketch previs, identity-board-to-storyboard workflows, beat-synced videos, product assembly boards, or when the user mentions Aimikoda-style prompts.
 
 Each storyboard panel must contain:
 
@@ -39,28 +46,38 @@ The annotation text is production metadata for Seedance2 and must not be treated
    - style: cinematic realism, anime, product commercial, documentary, fashion editorial, etc.
    - continuity anchors: character, product, location, prop, color palette, lighting, costume
 
-2. Choose a storyboard form:
+2. Build the reference stack:
+   - Identify each uploaded asset role: character sheet, identity board, product reference, environment reference, logo/reference shape, style reference, storyboard/previs, audio/music, or UI source.
+   - If identity matters, define the fixed identity source before the storyboard: `图像1是角色身份参考，图像2是分镜参考。`
+   - If the storyboard should use rough sketches but the final video should look polished, separate the two: storyboard panels stay simple; final-video style appears in a style packet or tiny swatches.
+   - Preserve exact source roles. Do not call a storyboard image a style image, and do not call a character sheet a storyboard.
+
+3. Choose a storyboard form:
    - For one Seedance2 reference image, prefer a single detailed grid image.
    - Use `3x3` for 8-15 second videos and compact action-readable sequences.
    - Use `4x2` for 8-shot ads or product demos.
    - Use `3x4` or `4x3` for 15-30 second montage or trailer beats.
+   - Use `4x4` or 16 panels for performance grids, FACS/valence-arousal grids, or hyper-dynamic action routines.
+   - Use `4x6` or 24 panels for fast assembly, sabotage, UI motion, or many extractable micro-shots.
    - Use multiple storyboard images only for 30s+ or scene-heavy stories.
    - Read `references/storyboard-layouts.md` when you need layout rules.
 
-3. Write the ChatGPT/GPT Image storyboard prompt:
+4. Write the ChatGPT/GPT Image storyboard prompt:
    - Ask for a single detailed production storyboard image.
    - Specify reading order: left-to-right, top-to-bottom.
-   - Ask each panel to look like a real video still, with annotation strips outside the frame.
+   - Ask each panel to be one extractable shot or keyframe. For rough previs, prefer low-detail graphite sketch, strong silhouettes, and readable motion over finished illustration.
+   - Keep labels, director strips, panel numbers, timing, shot notes, arrows, or track boards outside the final keyframe area unless the user explicitly wants visible annotations inside the board.
    - Preserve character/product consistency across panels.
-   - Include all motion and blocking details in the panel description, not only in a separate table.
-   - Keep annotation text short and structured so it fits: `镜头/时长/景别/运镜/动作/走位/景深/光影/转场`.
+   - Include all motion, blocking, screen direction, prop state, camera logic, rhythm, and end-state details in the panel description, director strip, or track board.
+   - Keep annotation text short and structured so it fits: `镜头/时长/景别/运镜/动作/走位/景深/光影/转场`, or for animatics: `BEAT / CAMERA / ACTION / RHYTHM / STATE / STYLE`.
 
-4. Write the Seedance2 prompt:
+5. Write the Seedance2 prompt:
    - Bind the asset: `将图像1定义为详细制作故事板参考图。`
    - Tell Seedance2 to follow the storyboard as a timeline, not as a collage.
    - Tell it to read the annotations as production instructions.
-   - Tell it not to render the storyboard text, borders, grids, or labels into the final video.
+   - Tell it not to render the storyboard text, panel borders, headers, notes, arrows, color marks, grids, track boards, style swatches, or labels into the final video.
    - Add subject binding, shot order, camera motion, blocking, quality, and defect controls from the `seedance2-prompts` style.
+   - Do not repeat every storyboard detail unless the video model needs reinforcement. Prefer describing how to interpret the board, what to preserve, what to interpolate, and what not to invent.
 
 ## Output Shape
 
@@ -79,6 +96,16 @@ For normal requests, output:
 
 If the user asks only for a storyboard, still make it detailed and Seedance2-ready by default. If the user explicitly asks for a clean no-text board, remove the annotation strips and represent motion with arrows, motion trails, poses, depth cues, and clear composition.
 
+## Aimikoda-Derived Rules
+
+- Prefer planning readability over illustration quality for action: rough sketches, strong silhouettes, one clear beat per panel, and minimal shading often work better than polished concept art.
+- Use a clear cause-effect chain for action and product work: tool engages, body shifts, object changes state, consequence happens. Avoid disconnected cool shots.
+- For action, dance, sports, and combat, require escalation: calm hook, first burst, mid-sequence complexity, impact or reversal, final held payoff.
+- For beat-synced work, make each beat a separate shot or panel and label rhythm explicitly: `hold`, `burst`, `snap`, `impact`, `rise`, `peak`, `drop`, `final spike`.
+- For identity-heavy work, generate or reference an identity board before the storyboard. Preserve face, silhouette, outfit, proportions, color identity, signature prop, and pose language.
+- Use FACS, valence-arousal, Laban movement, IPA/phonetics, and SFX only when they directly improve controllability. Keep them as concise production metadata.
+- For Seedance2, always instruct that storyboard artifacts are reference-only and must not appear in the final video.
+
 ## Seedance2 Reference Rules
 
 - Always refer to the storyboard image as `图像1` unless the user gives a different asset order.
@@ -93,3 +120,4 @@ If the user asks only for a storyboard, still make it detailed and Seedance2-rea
 
 - Read `references/storyboard-layouts.md` for panel count, annotation strip design, and Seedance2-ready layout choices.
 - Read `references/prompt-templates.md` for copyable detailed storyboard and Seedance2 templates.
+- Read `references/aimikoda-methods.md` for Aimikoda-derived method patterns from the 59 provided prompts: rough previs, identity boards, motion-readable grids, track boards, performance grids, and authoritative storyboard-to-video prompts.

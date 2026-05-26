@@ -10,6 +10,8 @@ Use these rules when choosing a detailed storyboard prompt format for ChatGPT/GP
 | Product/ad sequence | 12-18s | 4x2 detailed grid | Good for 8 clear product beats |
 | Character intro | 6-10s | 3x2 detailed grid | Prioritize identity, pose, and costume continuity |
 | Fast-cut montage | 15-30s | 3x4 or 4x3 detailed grid | Keep annotations short to avoid crowding |
+| Performance/action routine | 10-20s | 4x4 rough previs grid | Good for 16 readable beats, FACS/performance grids, sports, combat, or music-synced motion |
+| Assembly/sabotage/UI animatic | 10-20s | 4x6 track board | Good for 24 micro-shots with prop-state or UI-state continuity |
 | Trailer beat sheet | 20-40s | multiple 3x3 boards | Split by scene or emotional phase |
 | Long story | 30s+ | multiple storyboard images | Generate one Seedance clip per board/scene |
 
@@ -54,6 +56,30 @@ Avoid:
 - unreadably tiny action details
 - large jumps in costume, location, or object shape
 - chaotic camera movement unless explicitly requested
+
+## Rough Previs Rules
+
+Use rough previs when motion needs to be readable to Seedance2:
+
+- Prefer graphite, pencil, manga thumbnail, wireframe mannequin, or semi-mannequin planning sketches.
+- Keep one action beat per panel.
+- Use strong silhouettes, clear screen direction, and simple body momentum.
+- Add only the annotations that help staging: camera frame, motion direction, force arrow, timing accent, impact point, or environment interaction.
+- Separate storyboard style from final-video style. The board can be monochrome while the final video style is described in a style packet or tiny swatches.
+- Avoid finished illustration, dense shadows, repeated ghost bodies, and tiny unreadable details.
+
+## Track Board Rows
+
+For animatics with many shots, add a compact track board outside the keyframes:
+
+- `BEAT`: short panel label, such as `reflect`, `reveal`, `insert`, `impact`, `payoff`.
+- `CAMERA`: shot and move, such as `ECU`, `wide`, `insert`, `macro`, `overhead`, `OTS`, `push-in`, `whip pan`, `orbit`, `pullback`.
+- `ACTION`: the visible action in verb form.
+- `RHYTHM`: `hold`, `burst`, `fast`, `snap`, `rise`, `impact`, `peak`, `drop`, `final spike`.
+- `STATE`: the continuity state after that panel, especially for products, devices, UI, props, costumes, or transformations.
+- `STYLE`: rough sketch note or final-video style cue.
+
+Use track boards for fast cause-effect sequences. A state change must be visibly caused by the preceding action.
 
 ## Clean Board Exception
 
