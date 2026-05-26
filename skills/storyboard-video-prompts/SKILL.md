@@ -1,6 +1,6 @@
 ---
 name: storyboard-video-prompts
-description: Create detailed Seedance2-ready production storyboard prompts for ChatGPT/GPT Image 2/OpenAI image2. Use when Codex needs to turn an idea, script, product ad, music video, short drama, shot list, visual concept, action choreography, product demo, identity-board workflow, rough previs, animatic, Aimikoda-style storyboard grid, or storyboard-to-video reference into a multi-panel storyboard image that includes shot order, shot size, camera movement, character action, blocking/path, depth of field/lens, environment, lighting, transition, continuity anchors, rhythm/action/state tracking, and paired Seedance2 video-generation prompts.
+description: Create detailed Seedance2-ready production storyboard prompts for ChatGPT/GPT Image 2/OpenAI image2. Use when Codex needs to turn an idea, script, product ad, music video, short drama, shot list, visual concept, action choreography, product demo, identity-board workflow, rough previs, animatic, Aimikoda-style storyboard grid, camera-movement plan, dialogue blocking, cinematic shot-language prompt, or storyboard-to-video reference into a multi-panel storyboard image that includes shot order, shot size, camera angle, camera movement, character action, blocking/path, depth of field/lens, environment, lighting, transition, continuity anchors, rhythm/action/state tracking, and paired Seedance2 video-generation prompts.
 ---
 
 # Storyboard Video Prompts
@@ -22,13 +22,15 @@ Default to a **Seedance2-ready storyboard workflow**, not a generic pretty story
 
 Read `references/aimikoda-methods.md` before complex action, choreography, rough sketch previs, identity-board-to-storyboard workflows, beat-synced videos, product assembly boards, or when the user mentions Aimikoda-style prompts.
 
+Read `references/camera-language.md` before dialogue scenes, character entrances, emotional scenes, action/chase shots, multi-shot continuity, or when the user asks for stronger 运镜/镜头感/电影感.
+
 Each storyboard panel must contain:
 
 - a video keyframe image area
 - a compact production annotation strip outside the keyframe area
 - shot number and time range
 - shot size/framing: 全景, 中景, 近景, 特写, 低角度, 俯拍, 过肩, etc.
-- camera movement: 固定镜头, 缓慢推近, 平稳跟拍, 横移, 上摇, 环绕, 拉焦, etc.
+- camera angle and movement: 低机位, 平视, 俯拍, 过肩, 荷兰倾斜, 固定, 缓慢推近, 平稳跟拍, 横移, 上摇, 环绕, 拉焦, etc.
 - subject action and emotion
 - blocking/path: where the subject starts, moves, stops, turns, looks, or interacts
 - depth of field/lens language: 浅景深, 背景虚化, 广角空间感, 长焦压缩, 拉焦
@@ -52,7 +54,14 @@ The annotation text is production metadata for Seedance2 and must not be treated
    - If the storyboard should use rough sketches but the final video should look polished, separate the two: storyboard panels stay simple; final-video style appears in a style packet or tiny swatches.
    - Preserve exact source roles. Do not call a storyboard image a style image, and do not call a character sheet a storyboard.
 
-3. Choose a storyboard form:
+3. Design the camera language:
+   - Assign each shot a purpose: entrance, reveal, dialogue, emotional pressure, isolation, action speed, environmental exposition, or transition.
+   - Use the camera formula: `视觉风格 + 主体动作 + 镜头角度 + AI运镜指令 + 环境光影 + 输出参数`.
+   - For the same subject across cuts, change camera angle by at least 30 degrees and usually change shot size too.
+   - For two-person dialogue, keep a stable 180-degree axis and fixed left/right positions.
+   - Use camera movement to reveal background or emotion instead of only describing emotions directly.
+
+4. Choose a storyboard form:
    - For one Seedance2 reference image, prefer a single detailed grid image.
    - Use `3x3` for 8-15 second videos and compact action-readable sequences.
    - Use `4x2` for 8-shot ads or product demos.
@@ -62,16 +71,16 @@ The annotation text is production metadata for Seedance2 and must not be treated
    - Use multiple storyboard images only for 30s+ or scene-heavy stories.
    - Read `references/storyboard-layouts.md` when you need layout rules.
 
-4. Write the ChatGPT/GPT Image storyboard prompt:
+5. Write the ChatGPT/GPT Image storyboard prompt:
    - Ask for a single detailed production storyboard image.
    - Specify reading order: left-to-right, top-to-bottom.
    - Ask each panel to be one extractable shot or keyframe. For rough previs, prefer low-detail graphite sketch, strong silhouettes, and readable motion over finished illustration.
    - Keep labels, director strips, panel numbers, timing, shot notes, arrows, or track boards outside the final keyframe area unless the user explicitly wants visible annotations inside the board.
    - Preserve character/product consistency across panels.
-   - Include all motion, blocking, screen direction, prop state, camera logic, rhythm, and end-state details in the panel description, director strip, or track board.
+   - Include all motion, blocking, screen direction, prop state, camera angle, camera movement, rhythm, and end-state details in the panel description, director strip, or track board.
    - Keep annotation text short and structured so it fits: `镜头/时长/景别/运镜/动作/走位/景深/光影/转场`, or for animatics: `BEAT / CAMERA / ACTION / RHYTHM / STATE / STYLE`.
 
-5. Write the Seedance2 prompt:
+6. Write the Seedance2 prompt:
    - Bind the asset: `将图像1定义为详细制作故事板参考图。`
    - Tell Seedance2 to follow the storyboard as a timeline, not as a collage.
    - Tell it to read the annotations as production instructions.
@@ -106,6 +115,15 @@ If the user asks only for a storyboard, still make it detailed and Seedance2-rea
 - Use FACS, valence-arousal, Laban movement, IPA/phonetics, and SFX only when they directly improve controllability. Keep them as concise production metadata.
 - For Seedance2, always instruct that storyboard artifacts are reference-only and must not appear in the final video.
 
+## Camera-Language Rules
+
+- Do not write vague camera notes like `多运镜` alone. Name the angle, movement, speed/energy, subject relation, and emotional purpose.
+- Use low-angle rising shots for important entrances; rear follow plus scan for mystery; eye-level follow plus orbit for character/environment exposition.
+- Use over-the-shoulder reverse shots and a fixed 180-degree axis for dialogue. Avoid crossing from one side of the axis to the other unless a deliberate disorientation is requested.
+- Use POV high-angle shots for oppression, rear-only views for loneliness, Dutch tilt for tension, and ground-level tracking for chase/action.
+- Keep Dutch tilt below 25 degrees and short. Add `人物比例正常无畸变` when using very low angles.
+- For consecutive shots of the same subject, require at least a 30-degree camera-angle change and preferably a shot-size change.
+
 ## Seedance2 Reference Rules
 
 - Always refer to the storyboard image as `图像1` unless the user gives a different asset order.
@@ -121,3 +139,4 @@ If the user asks only for a storyboard, still make it detailed and Seedance2-rea
 - Read `references/storyboard-layouts.md` for panel count, annotation strip design, and Seedance2-ready layout choices.
 - Read `references/prompt-templates.md` for copyable detailed storyboard and Seedance2 templates.
 - Read `references/aimikoda-methods.md` for Aimikoda-derived method patterns from the 59 provided prompts: rough previs, identity boards, motion-readable grids, track boards, performance grids, and authoritative storyboard-to-video prompts.
+- Read `references/camera-language.md` for camera-movement requirements, dialogue continuity, 180-degree axis, 30-degree cut rules, entrance shots, emotional shots, and action tracking.

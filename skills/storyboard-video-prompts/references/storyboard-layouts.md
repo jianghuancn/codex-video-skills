@@ -28,7 +28,7 @@ The annotation strip should include:
 
 - 镜头编号 and time range
 - 景别/framing
-- 运镜/camera movement
+- 角度 and 运镜/camera angle and movement
 - 人物动作/subject action
 - 走位/blocking or path
 - 景深/lens/depth cue
@@ -44,7 +44,7 @@ Each keyframe zone should visibly encode:
 - shot type: wide shot, medium shot, close-up, over-the-shoulder, top-down, low-angle
 - action: one clear subject action or visual change
 - blocking: arrows, footprints, gaze direction, object interaction, start/end pose when useful
-- camera intent: push-in, pan, tracking, fixed, rack focus, orbit, tilt
+- camera intent: low-angle rise, rear follow, eye-level follow, push-in, pan, tracking, fixed, rack focus, orbit, tilt, Dutch tilt, ground-level follow
 - depth: foreground/midground/background separation, shallow depth of field, background blur, focus target
 - lighting/color: morning light, neon, soft studio, golden hour, moonlight, rim light
 - continuity anchor: same character/product/location/prop/color palette
@@ -56,6 +56,21 @@ Avoid:
 - unreadably tiny action details
 - large jumps in costume, location, or object shape
 - chaotic camera movement unless explicitly requested
+
+## Camera Movement Requirements
+
+Every production storyboard should describe camera language with enough specificity for video generation:
+
+- **Entrance power**: extreme low angle, slow rise from feet/clothing to face, normal proportions, no distortion.
+- **Mystery**: rear follow, slow vertical rise, lateral scan, environment first, side-face reveal second.
+- **Character plus environment**: eye-level follow while slowly orbiting around the subject.
+- **Dialogue**: medium two-shot for basic exchange; over-the-shoulder reverse shots for deeper emotion or conflict.
+- **Dialogue continuity**: keep A/B left-right placement fixed and stay on one side of the 180-degree axis.
+- **Oppression**: first-person high-angle POV from the dominant side looking down.
+- **Loneliness**: pure rear view, stillness or slow walk, large negative space.
+- **Suspense**: Dutch tilt 15-20 degrees with slight handheld movement, held briefly.
+- **Action/chase**: ground-level tracking close to footsteps, fast follow movement, strong speed and impact.
+- **Cut continuity**: when cutting on the same subject, change angle by at least 30 degrees and preferably change shot size.
 
 ## Rough Previs Rules
 
