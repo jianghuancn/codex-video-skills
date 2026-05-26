@@ -30,5 +30,14 @@ Ask Codex:
 Install the Codex skill from https://github.com/jianghuancn/codex-video-skills/tree/main/skills/<skill-name>
 ```
 
-Restart Codex after installing new skills.
+Available install URLs:
 
+```text
+Install the Codex skill from https://github.com/jianghuancn/codex-video-skills/tree/main/skills/seedance2-prompts
+```
+
+```text
+Install the Codex skill from https://github.com/jianghuancn/codex-video-skills/tree/main/skills/storyboard-video-prompts
+```
+
+Restart Codex after installing new skills.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyboard Video Prompts"
+  short_description: "Detailed Seedance2 storyboard prompts"
+  default_prompt: "Use $storyboard-video-prompts to turn this video idea into a detailed Seedance2-ready storyboard image prompt and paired video prompt."
