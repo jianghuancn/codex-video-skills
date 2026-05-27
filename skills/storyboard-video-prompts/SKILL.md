@@ -22,14 +22,14 @@ Default to a **Seedance2-ready storyboard workflow**, not a generic pretty story
 
 Read `references/aimikoda-methods.md` before complex action, choreography, rough sketch previs, identity-board-to-storyboard workflows, beat-synced videos, product assembly boards, or when the user mentions Aimikoda-style prompts.
 
-Read `references/camera-language.md` before dialogue scenes, character entrances, emotional scenes, action/chase shots, multi-shot continuity, or when the user asks for stronger 运镜/镜头感/电影感.
+Read `references/camera-language.md` before dialogue scenes, character entrances, emotional scenes, action/chase shots, multi-shot continuity, cinematic shot-size sequencing, lighting design, or when the user asks for stronger 运镜/镜头感/电影感.
 
 Each storyboard panel must contain:
 
 - a video keyframe image area
 - a compact production annotation strip outside the keyframe area
 - shot number and time range
-- shot size/framing: 全景, 中景, 近景, 特写, 低角度, 俯拍, 过肩, etc.
+- shot size/framing: 远景/全景, 中景, 近景, 特写, 低角度, 俯拍, 过肩, etc.
 - camera angle and movement: 低机位, 平视, 俯拍, 过肩, 荷兰倾斜, 固定, 缓慢推近, 平稳跟拍, 横移, 上摇, 环绕, 拉焦, etc.
 - subject action and emotion
 - blocking/path: where the subject starts, moves, stops, turns, looks, or interacts
@@ -57,6 +57,8 @@ The annotation text is production metadata for Seedance2 and must not be treated
 3. Design the camera language:
    - Assign each shot a purpose: entrance, reveal, dialogue, emotional pressure, isolation, action speed, environmental exposition, or transition.
    - Use the camera formula: `视觉风格 + 主体动作 + 镜头角度 + AI运镜指令 + 环境光影 + 输出参数`.
+   - Use shot size to split information instead of putting everything in one frame: 远景/全景 establishes environment, 中景 shows action, 近景 carries facial emotion, 特写 isolates the decisive detail.
+   - Choose lighting direction/type for mood: cold top light for mystery or pressure, backlight for romance and rim glow, bottom light for horror or unease, Tyndall beams for sacred or epic spaces.
    - For the same subject across cuts, change camera angle by at least 30 degrees and usually change shot size too.
    - For two-person dialogue, keep a stable 180-degree axis and fixed left/right positions.
    - Use camera movement to reveal background or emotion instead of only describing emotions directly.
@@ -118,6 +120,10 @@ If the user asks only for a storyboard, still make it detailed and Seedance2-rea
 ## Camera-Language Rules
 
 - Do not write vague camera notes like `多运镜` alone. Name the angle, movement, speed/energy, subject relation, and emotional purpose.
+- Use 景别 to guide attention in order: environment first, action second, emotion third, detail/payoff last. Avoid one overloaded wide shot that contains all story information.
+- For cinematic four-beat scene building, use `远景/全景 -> 中景 -> 近景 -> 特写`: establish place and atmosphere, follow the subject action, catch the gaze or expression shift, then magnify the object/hand/eye/detail that carries the feeling.
+- Design lighting as story mood, not generic brightness. Avoid `全亮平光` unless the user wants interview, catalog, or neutral commercial flatness.
+- Name the light source direction/type when it matters: `冷色顶光`, `逆光轮廓光`, `底光`, `丁达尔光束`, soft window light, neon rim, moonlight, practical lamp, etc.
 - Use low-angle rising shots for important entrances; rear follow plus scan for mystery; eye-level follow plus orbit for character/environment exposition.
 - Use over-the-shoulder reverse shots and a fixed 180-degree axis for dialogue. Avoid crossing from one side of the axis to the other unless a deliberate disorientation is requested.
 - Use POV high-angle shots for oppression, rear-only views for loneliness, Dutch tilt for tension, and ground-level tracking for chase/action.
@@ -139,4 +145,4 @@ If the user asks only for a storyboard, still make it detailed and Seedance2-rea
 - Read `references/storyboard-layouts.md` for panel count, annotation strip design, and Seedance2-ready layout choices.
 - Read `references/prompt-templates.md` for copyable detailed storyboard and Seedance2 templates.
 - Read `references/aimikoda-methods.md` for Aimikoda-derived method patterns from the 59 provided prompts: rough previs, identity boards, motion-readable grids, track boards, performance grids, and authoritative storyboard-to-video prompts.
-- Read `references/camera-language.md` for camera-movement requirements, dialogue continuity, 180-degree axis, 30-degree cut rules, entrance shots, emotional shots, and action tracking.
+- Read `references/camera-language.md` for shot-size sequencing, lighting mood design, camera-movement requirements, dialogue continuity, 180-degree axis, 30-degree cut rules, entrance shots, emotional shots, and action tracking.

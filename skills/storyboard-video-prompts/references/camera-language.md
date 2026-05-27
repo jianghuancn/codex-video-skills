@@ -18,11 +18,64 @@ For storyboard annotation strips, compress it to:
 
 Good camera notes name:
 
+- shot-size function: establishing environment, readable action, facial emotion, decisive detail
 - angle: low angle, eye level, high angle, POV high angle, rear view, over-the-shoulder, Dutch tilt, ground-level
 - movement: push-in, pullback, follow, tracking, pan, tilt up/down, scan, orbit, handheld drift, rack focus
 - subject relation: from behind, from A shoulder to B, camera at eye height, near ground, from dominant character POV
 - emotional purpose: entrance power, mystery, exposition, intimacy, oppression, loneliness, instability, speed
+- lighting mood: top light, backlight/rim light, bottom light, Tyndall beams, soft window light, neon, moonlight
 - safety: normal proportions, no distortion, fixed left/right positions, same side of axis
+
+## Shot Size And Information Flow
+
+Use shot size to split story information and control the audience's viewing order. Avoid cramming environment, action, emotion, and key detail into one all-purpose shot.
+
+| Shot size | Function | Use for | Prompt pattern |
+|---|---|---|---|
+| 远景/全景 | Establish the whole environment and atmosphere | location, spatial scale, story world | `远景/全景，展示[地点/整体环境]，营造[氛围]` |
+| 中景 | Focus on the subject's readable action | walking, entering, interaction, relation between characters | `中景，[人物]正在[动作]，让观众注意到[行为重点]` |
+| 近景 | Capture expression and emotional change | gaze shift, hesitation, attraction, fear, decision | `近景，捕捉[表情/眼神变化]，传递[情绪]` |
+| 特写 | Magnify the detail that carries the feeling | hand, eye, object, texture, key moment | `特写，[手指/眼神/物品]轻微动作，突出[细节与情绪]` |
+
+### Four-Shot Cinematic Breakdown
+
+Use this pattern when a simple prompt feels flat:
+
+```text
+用四个景别拆分同一场景：
+1. 远景/全景：交代[地点/环境]，营造[氛围]。
+2. 中景：表现[人物动作]，让观众关注[行为重点]。
+3. 近景：捕捉[人物表情/眼神变化]，传递[情绪]。
+4. 特写：放大[关键细节]，强化[情绪/故事含义]。
+整体风格：电影感、自然光影、叙事性镜头语言。
+```
+
+Example structure: bakery scene
+
+- 远景/全景: warm bakery exterior/interior atmosphere, shelves and window glow establish place.
+- 中景: boy enters and looks around; action becomes readable.
+- 近景: boy pauses, gaze catches the bread display; emotion starts.
+- 特写: fingers hover near or touch the glass; a concrete detail carries the feeling.
+
+## Lighting Direction And Mood
+
+Use lighting to set mood, not just visibility. Avoid `全亮平光` unless the request needs an interview, e-commerce, catalog, tutorial, or neutral corporate look.
+
+| Lighting | Function | Best scenes | Mood keywords | Prompt pattern |
+|---|---|---|---|---|
+| 顶光 | Shadows fall from above and carve the face | prison break, interrogation, danger, pressure | mysterious, tense, dangerous, oppressive | `冷色顶光从上方打下，人物面部形成阴影，危险紧张氛围` |
+| 逆光 | Rim light outlines hair, shoulders, and silhouette | proposal, reunion, romantic memory, gentle encounter | romantic, dreamy, warm, cinematic outline | `逆光照亮人物轮廓和发丝，背景柔和发光，浪漫电影感` |
+| 底光 | Upward light breaks normal shadow logic | horror, thriller, uncanny or abnormal scenes | eerie, unsettling, frightening, unnatural | `底光从下方向上照射，面部阴影反常，制造不安恐怖感` |
+| 丁达尔光 | Visible light beams add depth and sacred scale | church, library, forest, trial, temple, epic space | sacred, solemn, spatial, epic | `丁达尔光穿过空气/尘埃形成光束，增强空间纵深和神圣感` |
+
+Lighting prompt template:
+
+```text
+场景：[具体场景]
+情绪目标：[紧张/浪漫/恐怖/神圣]
+光线设计：[顶光/逆光/底光/丁达尔光]
+画面效果：通过光线方向和阴影关系塑造[氛围]，避免全亮平光，增强电影感和故事感。
+```
 
 ## Shot Patterns
 
@@ -160,6 +213,9 @@ Use this prompt fragment:
 Avoid these unless the user asks for them:
 
 - vague `多运镜` without naming exact movements
+- single-shot prompts that dump environment, action, emotion, and detail into one frame
+- `全亮平光` when the scene needs story tension, romance, horror, mystery, or sacred scale
+- generic `电影感光影` without naming direction, source, shadow behavior, or mood target
 - crossing dialogue axis accidentally
 - tiny angle changes between consecutive shots
 - extreme Dutch tilt held too long
