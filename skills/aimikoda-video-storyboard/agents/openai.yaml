@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aimikoda Video Storyboard"
+  short_description: "Aimikoda-style video storyboard prompts"
+  default_prompt: "Use $aimikoda-video-storyboard to turn my video idea into a Seedance2-ready storyboard prompt and paired video prompt."
