@@ -1,6 +1,6 @@
 ---
 name: aimikoda-video-storyboard
-description: Use when Codex needs an Aimikoda-style video storyboard prompt, rough previs board, animatic track board, reference-image workflow, product demo, action scene, transformation, performance board, or Seedance2 storyboard-to-video prompt from a video idea, script, shot list, visual concept, or uploaded references.
+description: Use when Codex needs an Aimikoda-style video storyboard prompt, rough previs board, animatic track board, reference-image workflow, product demo, action scene, transformation, performance board, cinematic shot-size or lighting plan, or Seedance2 storyboard-to-video prompt from a video idea, script, shot list, visual concept, or uploaded references.
 ---
 
 # Aimikoda Video Storyboard
@@ -33,6 +33,7 @@ Return:
    - duration and aspect ratio
    - final style and tone
    - continuity anchors: character, product, prop, location, color palette, lighting, costume
+   - emotional target and visual emphasis: environment, action, emotion, detail, rhythm, or prop state
 
 2. Bind references:
    - Define asset roles explicitly: `图像1=角色身份参考`, `图像2=产品/道具参考`, `图像3=场景/风格参考`.
@@ -49,7 +50,9 @@ Return:
    - Prefer one single board image when possible.
    - Make each panel one extractable shot or key action beat.
    - Keep storyboard style separate from final-video style. Rough boards can be graphite or sketch; final style goes in a style packet or tiny swatches.
-   - Include shot order, camera, action, blocking, rhythm, prop state, continuity, and final payoff.
+   - Include shot order, shot size, camera, action, blocking, lighting, rhythm, prop state, continuity, and final payoff.
+   - Use shot size to split information: 远景/全景 establishes environment, 中景 shows action, 近景 carries facial emotion, 特写 isolates the decisive detail or prop state.
+   - Use lighting to set mood: 冷色顶光 for pressure or danger, 逆光/轮廓光 for romance or hero reveal, 底光 for horror or unease, 丁达尔光 for sacred, solemn, or epic spaces.
    - Use track rows for fast work: `BEAT / CAMERA / ACTION / RHYTHM / STATE / STYLE`.
 
 5. Generate the Seedance2 prompt:
@@ -65,6 +68,8 @@ Read `references/output-templates.md` for copyable prompt skeletons.
 
 - Make the board useful for video generation, not just attractive as an image.
 - Prefer planning readability over polish for action: strong silhouettes, clear body momentum, one beat per panel, minimal shading.
+- For cinematic narrative boards, guide viewer attention by shot size: environment first, action second, emotion third, detail/payoff last. Avoid one overloaded wide shot containing all story information.
+- Do not use generic `电影感光影` alone. Name the light direction/type and mood effect, and avoid `全亮平光` unless the video should feel like an interview, catalog, or neutral tutorial.
 - Use explicit cause-effect chains: action happens, object state changes, consequence follows.
 - Avoid disconnected cool shots. Every panel should advance action, emotion, reveal, transformation, rhythm, or state.
 - For fast sequences, label rhythm: `hold`, `burst`, `fast`, `snap`, `impact`, `rise`, `peak`, `drop`, `final spike`.

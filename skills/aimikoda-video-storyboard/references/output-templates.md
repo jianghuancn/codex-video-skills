@@ -30,8 +30,15 @@ Use these skeletons when producing Aimikoda-style storyboard outputs. Replace br
 - 每个动作都有可见因果：准备 -> 接触/触发 -> 状态变化 -> 结果。
 - 结尾必须有清楚 payoff：[final image/payoff].
 
+景别与灯光：
+- 用景别拆分信息：远景/全景交代环境和氛围，中景表现人物动作或行为关系，近景捕捉表情/眼神变化，特写放大关键细节、物品、手部或道具状态。
+- 每格标注主要景别，不要把环境、动作、情绪和细节全部塞进同一画面。
+- 灯光服务情绪目标：[紧张/浪漫/恐怖/神圣/温暖/孤独]。
+- 可选灯光：冷色顶光用于神秘、紧张、危险、压迫；逆光/轮廓光用于浪漫、梦幻、温暖和发丝轮廓；底光用于诡异、不安、恐怖和反常；丁达尔光束用于教堂、森林、审判、图书馆等神圣或史诗空间。
+- 避免全亮平光，除非目标是访谈、证件照、电商目录或中性教程画面。
+
 镜头节奏：
-[列出 8-24 个 beat / camera / action / rhythm / state]
+[列出 8-24 个 beat / shot size / camera / action / lighting / rhythm / state]
 ```
 
 ## Animatic Track Board Prompt
@@ -47,12 +54,14 @@ Scene: [location, subject roles, start state, end state, props/effects, must-rea
 Sheet design:
 - 单张 [4x3 / 4x4 / 4x6] 网格。
 - 每个面板是一个可提取镜头，关键帧区域低细节、清楚、可读。
-- 面板外侧或底部包含 compact track board: BEAT / CAMERA / ACTION / RHYTHM / ESCALATION / STATE / STYLE。
+- 面板外侧或底部包含 compact track board: BEAT / SHOT SIZE / CAMERA / ACTION / LIGHTING / RHYTHM / ESCALATION / STATE / STYLE。
 - 不要在关键帧区域内生成字幕、Logo、水印、可读 UI 文本或无关技术标记。
 
 Track board:
 BEAT: [P01 ...]
+SHOT SIZE: [wide / medium / close-up / ECU / insert / macro / overhead ...]
 CAMERA: [ECU / wide / insert / macro / overhead / OTS / low angle / push-in / whip pan / orbit ...]
+LIGHTING: [cold top light / backlight rim / bottom light / Tyndall beams / soft window light / neon rim / moonlight ...]
 RHYTHM: [hold / burst / fast / snap / rise / impact / peak / drop / final spike ...]
 ACTION: [per-panel verb phrase]
 STATE: [per-panel prop or story state]

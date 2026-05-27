@@ -66,6 +66,42 @@ Use for ads, short drama, cinematic stories, product demos, and scenes where See
 - Keep text outside the video keyframe area when possible.
 - Include shot number, framing, camera move, action, blocking, depth/lens, lighting, transition, and continuity.
 - Make each panel an extractable shot or a fixed key moment in a continuous shot.
+- Use shot size to split information instead of cramming everything into one frame: 远景/全景 for environment and atmosphere, 中景 for readable action, 近景 for expression and emotional shift, 特写 for decisive detail, hand, eye, object, texture, or prop state.
+- Use lighting direction/type as mood control, not generic brightness. Avoid `全亮平光` unless the target is interview, catalog, e-commerce, tutorial, or neutral corporate footage.
+
+## Shot Size And Lighting Patterns
+
+Use these patterns when a concept feels visually flat, when the user asks for more 电影感/景别/灯光/光影/氛围, or when the board needs stronger cinematic storytelling.
+
+### Shot-Size Information Flow
+
+```text
+用景别拆分同一场景：
+1. 远景/全景：交代[地点/整体环境]，营造[氛围]。
+2. 中景：表现[人物动作/行为关系]，让观众关注[行为重点]。
+3. 近景：捕捉[表情/眼神变化]，传递[情绪]。
+4. 特写：放大[关键细节/物品/手部/眼神]，强化[情绪/故事含义]。
+```
+
+For Aimikoda boards, each panel should still have one clear beat. If using rough previs, encode shot size with framing boxes and silhouettes; if using detailed boards, put the shot size in the director strip.
+
+### Lighting Mood Choices
+
+| Lighting | Use for | Prompt pattern |
+|---|---|---|
+| 冷色顶光 | mystery, danger, prison break, pressure, interrogation | `冷色顶光从上方打下，人物面部形成阴影，危险紧张氛围` |
+| 逆光/轮廓光 | proposal, reunion, romance, hero reveal, gentle memory | `逆光照亮人物轮廓和发丝，背景柔和发光，浪漫电影感` |
+| 底光 | horror, thriller, uncanny or abnormal moments | `底光从下方向上照射，面部阴影反常，制造不安恐怖感` |
+| 丁达尔光 | church, forest, library, trial, temple, sacred/epic spaces | `丁达尔光穿过空气/尘埃形成光束，增强空间纵深和神圣感` |
+
+Lighting prompt mini-template:
+
+```text
+场景：[具体场景]
+情绪目标：[紧张/浪漫/恐怖/神圣/温暖/孤独]
+光线设计：[顶光/逆光/底光/丁达尔光/柔和窗光/霓虹边缘光/月光]
+画面效果：通过光线方向和阴影关系塑造[氛围]，避免全亮平光，增强电影感和故事感。
+```
 
 ### Identity Or Performance Board
 
@@ -108,6 +144,8 @@ Before returning the final answer:
 - State final video duration and aspect ratio.
 - Separate storyboard style from final video style.
 - Ensure every panel has one main action beat.
+- Add shot size/framing for each shot, especially 远景/全景, 中景, 近景, 特写 when narrative information should unfold in order.
+- Add lighting direction/type and mood effect when the scene depends on atmosphere.
 - Add continuity anchors: identity, location, prop, screen direction, color palette, lighting.
 - Add rhythm or state tracking for fast sequences.
 - Add Seedance2 artifact-exclusion text.
